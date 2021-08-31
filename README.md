@@ -1,4 +1,5 @@
 # MTGCardCollectionFrontend
+This project is intended to make use of the skryfall API.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
