@@ -1,1 +1,45 @@
 <p>login works!</p>
+
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+  <div class="form-group">
+    <strong><label ngFor="Username">Username: </label></strong>
+    <input
+      required
+      Username="true"
+      ngModel
+      name="Username"
+      #Username="ngModel"
+      type="text"
+      id="email">
+    <div class="alert alert-danger" *ngIf="Username.touched && !Username.valid">
+      <div *ngIf="Username.errors.required">Email is required</div>
+      <div *ngIf="Username.errors.pattern">Valid email is required</div>
+      <div *ngIf="Username.errors?.email">Valid email is required</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <strong><label ngFor="Password">Password: </label></strong>
+    <input
+      required
+      minlength="6"
+      max-length="20"
+      pattern="^\S*$"
+      ngModel
+      name="Password"
+      #Password="ngModel"
+      type="password"
+      id="Password"
+      class="form-control">
+    <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
+      <div *ngIf="Password.errors.required">Password is required</div>
+      <div *ngIf="Password.errors.minlength">Reminder your password is 6 - 20 characters</div>
+      <div *ngIf="Password.errors.maxlength">Reminder your password is 6 - 20 characters</div>
+      <div *ngIf="Password.errors.pattern">Your password should not contain spaces</div>
+    </div>
+  </div>
+
+  <button>Login</button>
+</form>
+
+
