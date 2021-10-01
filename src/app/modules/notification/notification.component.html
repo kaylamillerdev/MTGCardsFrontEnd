@@ -1,0 +1,12 @@
+<div id="alert-container" class="w-100" [ngClass]="{'d-none':this.notifications.length==0}">
+  <div class="alert my-1 p-3 d-flex justify-content-end" *ngFor="let notification of notifications; notificationID as i">
+    <span class="alertMessage">
+      <strong>{{ notification.body }}</strong>
+    </span>
+    <strong>
+      <button class="btn btn-primary btn-md close" (click)="deleteNotification(i)">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </strong>
+  </div>
+</div>
