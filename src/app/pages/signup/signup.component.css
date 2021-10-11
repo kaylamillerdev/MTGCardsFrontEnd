@@ -20,24 +20,31 @@ form {
 } 
 
 /*rounds the edges of the input fields */ 
-input[type=text], input[type=email], input[type=password] { 
+input { 
     border: 2px;
     border-radius: 5px;
     height: 25px;
     width: 100%;
     padding: 10px;
     padding-bottom: 10px;
+    box-sizing: border-box;
 }
 
-label { 
+input::placeholder { 
     font-size: medium;
     font-family: Nunito, sans-serif;
     color: #316B83;
 }
 
 /*turns the fields red if error is thrown **needs more work** */ 
+/* Not used as far as I can see */
 .ng-invalid { 
     border-color: red; 
+}
+
+/* use alert class that was already put on the divs */
+.alert {
+  color: red;
 }
 
 /*split the screen */ 
