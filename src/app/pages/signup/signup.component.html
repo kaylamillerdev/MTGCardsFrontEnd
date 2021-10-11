@@ -1,12 +1,15 @@
-<p>signup works!</p>
-
+<link href="signup.component.css" Type="text/css" rel="stylesheet"> 
+<div class="split left"> 
+  <div class="centered">
+    <header>
+    <h1>Create Account</h1>
+    </header>
 <form
   #createAccountForm="ngForm"
   (ngSubmit)="signUp(createAccountForm)"
   >
   <!-- Username with validators -->
-  <div class="form-group">
-    <strong><label for="Username">Username</label></strong>
+      <div class="form-group">
     <input
       required
       minlength="6"
@@ -18,10 +21,11 @@
       id="Username"
       type="text"
       class="form-control"
+      placeholder="Username"
     />
     <div
       class="alert alert-danger"
-      *ngIf="Username.touched && !Username.valid"
+      *ngIf="Username.dirty && !Username.valid"
     >
       <div *ngIf="Username.errors.required">Username is required</div>
       <div *ngIf="Username.errors.minlength">
@@ -38,7 +42,6 @@
 
   <!-- FIRST NAME with validators  -->
   <div class="form-group">
-    <strong><label for="FirstName">First Name</label></strong>
     <input
       required
       minlength="2"
@@ -50,10 +53,11 @@
       id="FirstName"
       type="text"
       class="form-control"
+      placeholder="First Name"
     />
     <div
       class="alert alert-danger"
-      *ngIf="FirstName.touched && !FirstName.valid"
+      *ngIf="FirstName.dirty && !FirstName.valid"
     >
       <div *ngIf="FirstName.errors.required">First Name is required</div>
       <div *ngIf="FirstName.errors.minlength">
@@ -70,7 +74,6 @@
 
   <!-- LAST NAME with validators -->
   <div class="form-group">
-    <strong><label for="LastName">Last Name</label></strong>
     <input
       required
       minlength="2"
@@ -82,10 +85,11 @@
       id="LastName"
       type="text"
       class="form-control"
+      placeholder="Last Name"
     />
     <div
       class="alert alert-danger"
-      *ngIf="LastName.touched && !LastName.valid"
+      *ngIf="LastName.dirty && !LastName.valid"
     >
       <div *ngIf="LastName.errors.required">Last Name is required</div>
       <div *ngIf="LastName.errors.minlength">
@@ -102,7 +106,6 @@
 
   <!-- EMAIL with validators  -->
   <div class="form-group">
-    <strong><label for="Email">Email</label></strong>
     <input
       required
       Email="true"
@@ -113,8 +116,9 @@
       type="email"
       id="Email"
       class="form-control"
+      placeholder="Email"
     />
-    <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
+    <div class="alert alert-danger" *ngIf="Email.dirty && !Email.valid">
       <div *ngIf="Email.errors.required">Email is required</div>
       <div *ngIf="Email.errors.pattern">Valid email is required</div>
     </div>
@@ -123,7 +127,6 @@
   <!-- PASSWORD with validators  -->
   <!-- PASSWORD CAN CONTAIN ANY CHARACTER(S) EXCEPT WHITE SPACES -->
   <div class="form-group">
-    <strong><label for="Password">Password</label></strong>
     <input
       required
       minlength="6"
@@ -135,10 +138,11 @@
       type="password"
       id="Password"
       class="form-control"
+      placeholder="Password"
     />
     <div
       class="alert alert-danger"
-      *ngIf="Password.touched && !Password.valid"
+      *ngIf="Password.dirty && !Password.valid"
     >
       <div *ngIf="Password.errors.required">Password is required</div>
       <div *ngIf="Password.errors.minlength">
@@ -155,7 +159,6 @@
 
   <!-- PASSWORD CONFIRM - if passwords don't match an alert will display from message service -->
   <div class="form-group">
-    <strong><label>Confirm Password</label></strong>
     <input
       required
       ngModel
@@ -164,10 +167,11 @@
       type="password"
       id="PasswordConfirm"
       class="form-control"
+      placeholder="Confirm Password"
     />
     <div
       class="alert alert-danger"
-      *ngIf="PasswordConfirm.touched && !PasswordConfirm.valid"
+      *ngIf="PasswordConfirm.dirty && !PasswordConfirm.valid"
     >
       <div *ngIf="PasswordConfirm.errors.required">
         Password confirm is required
@@ -177,5 +181,15 @@
   </div>
   <br />
 
-  <button class="btn btn-primary">SignUp</button>
+  <button class="btn btn-primary">Sign Up</button>
+  <p>Already have an account? <a href="https://relaxed-lalande-20b424.netlify.app/login">Sign In</a></p> 
 </form>
+</div>
+</div> 
+
+
+<div class="split right"> 
+  <div class="centered">
+  </div>
+</div>
+
