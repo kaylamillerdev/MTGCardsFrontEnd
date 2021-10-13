@@ -24,7 +24,7 @@
     />
     <div
       class="alert alert-danger"
-      *ngIf="Username.dirty && !Username.valid"
+      *ngIf="Username.touched && !Username.valid"
     >
       <div *ngIf="Username.errors.required">Username is required</div>
       <div *ngIf="Username.errors.minlength">
@@ -56,7 +56,7 @@
     />
     <div
       class="alert alert-danger"
-      *ngIf="FirstName.dirty && !FirstName.valid"
+      *ngIf="FirstName.touched && !FirstName.valid"
     >
       <div *ngIf="FirstName.errors.required">First Name is required</div>
       <div *ngIf="FirstName.errors.minlength">
@@ -88,7 +88,7 @@
     />
     <div
       class="alert alert-danger"
-      *ngIf="LastName.dirty && !LastName.valid"
+      *ngIf="LastName.touched && !LastName.valid"
     >
       <div *ngIf="LastName.errors.required">Last Name is required</div>
       <div *ngIf="LastName.errors.minlength">
@@ -117,7 +117,7 @@
       class="form-control"
       placeholder="Email"
     />
-    <div class="alert alert-danger" *ngIf="Email.dirty && !Email.valid">
+    <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
       <div *ngIf="Email.errors.required">Email is required</div>
       <div *ngIf="Email.errors.pattern">Valid email is required</div>
     </div>
@@ -141,7 +141,7 @@
     />
     <div
       class="alert alert-danger"
-      *ngIf="Password.dirty && !Password.valid"
+      *ngIf="Password.touched && !Password.valid"
     >
       <div *ngIf="Password.errors.required">Password is required</div>
       <div *ngIf="Password.errors.minlength">
@@ -170,7 +170,7 @@
     />
     <div
       class="alert alert-danger"
-      *ngIf="PasswordConfirm.dirty && !PasswordConfirm.valid"
+      *ngIf="PasswordConfirm.touched && !PasswordConfirm.valid"
     >
       <div *ngIf="PasswordConfirm.errors.required">
         Password confirm is required
