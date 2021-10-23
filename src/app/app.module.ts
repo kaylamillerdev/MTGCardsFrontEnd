@@ -7,6 +7,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NavigationComponent } from './modules/navigation/navigation.component';
+import { NotificationComponent } from './modules/notification/notification.component';
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,15 @@ import { NavigationComponent } from './modules/navigation/navigation.component';
     HomeComponent,
     SignupComponent,
     LoginComponent,
-    NavigationComponent
+    NavigationComponent,
+    NotificationComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
