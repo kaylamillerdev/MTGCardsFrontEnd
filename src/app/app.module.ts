@@ -10,6 +10,7 @@ import { NotificationComponent } from './modules/notification/notification.compo
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { CookieService } from "ngx-cookie-service";
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CookieService } from "ngx-cookie-service";
     HomeComponent,
     SignupComponent,
     LoginComponent,
-    NotificationComponent
+    NotificationComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

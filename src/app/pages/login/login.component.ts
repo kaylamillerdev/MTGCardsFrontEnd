@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, NgForm, FormBuilder, Validators, FormGroup} from "@angular/forms";
+import { NgForm } from "@angular/forms";
 import { users } from "src/app/models/users";
 import { UserService} from "../../services/user.service";
 import { Router } from "@angular/router";
@@ -26,12 +26,14 @@ export class LoginComponent implements OnInit {
   user: users;
 
   login(loginForm: NgForm) {
+    console.log("Found the login form");
     if (loginForm.status == "VALID") {
+      console.log(loginForm.value);
       this.userService.login(loginForm.value).subscribe(
         (user: users) => {
           this.user = user;
           console.log("You have logged in");
-          this.router.navigateByUrl("/");
+          this.router.navigateByUrl("/profile");
           this.notifyService.newNotification({
             body: "You have logged in!",
           })
@@ -45,7 +47,4 @@ export class LoginComponent implements OnInit {
       });
     }
   };
-
-
-
 }

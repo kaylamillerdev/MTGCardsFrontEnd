@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { users } from "src/app/models/users";
+import { cardsOwned } from "src/app/models/cardsOwned";
 import { NgForm } from "@angular/forms";
 import {UserService } from "src/app/services/user.service";
 import {Router} from "@angular/router";
