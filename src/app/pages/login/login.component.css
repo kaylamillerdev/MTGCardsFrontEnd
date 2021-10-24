@@ -1,11 +1,11 @@
 body {
-    backgorund-color:#000000;
+    background-color:#000000;
     color:black
 
 }
 
 div#wrapper {
-    margin:0 auto; width:95%; margin:0 auto; maxwidth:960px; backgorund-color:#B5CDA3; padding:0 2%; opacity:1.25;
+    margin:0 auto; width:95%; margin:0 auto; width:960px; background-color:#B5CDA3; padding:0 2%; opacity:1.25;
 }
 
 nav {
@@ -40,8 +40,8 @@ footer{
 
 #bottom {width: 150px;}
 
-b{color: black; font-family:verdana; font-size:2.15em; text-decoration:none; text-algin:center;}
+b{color: black; font-family:verdana; font-size:2.15em; text-decoration:none; text-align:center;}
 
 p {font-size:1.15em; font-family:roman; color: #000000;}
 
-#main {width: 75%; float:left; fons-style:italic;}
+#main {width: 75%; float:left; font-style:italic;}

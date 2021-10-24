@@ -1,0 +1,19 @@
+button {
+  color: yellowgreen;
+  font-family: "Century Gothic";
+}
+
+p {
+  color: pink;
+}
+
+#frontPageImage {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  height: 200px;
+  width: 350px;
+}
+

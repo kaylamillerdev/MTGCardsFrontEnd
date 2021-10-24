@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
+import { NavigationComponent } from './modules/navigation/navigation.component';
 import { NotificationComponent } from './modules/notification/notification.component';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { CookieService } from "ngx-cookie-service";
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { CookieService } from "ngx-cookie-service";
     HomeComponent,
     SignupComponent,
     LoginComponent,
-    NotificationComponent
+    NavigationComponent,
+    NotificationComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,7 @@ import { CookieService } from "ngx-cookie-service";
     HttpClientModule,
     FormsModule
   ],
-  providers: [CookieService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
