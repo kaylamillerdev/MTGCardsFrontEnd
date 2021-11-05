@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { users } from '../../models/users';
@@ -18,7 +19,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.displayProfile();
-    
+
     }
 
     displayProfile() {
