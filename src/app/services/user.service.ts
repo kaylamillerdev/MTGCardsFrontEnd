@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { users } from "../models/users";
 import { Config } from "../Config/config";
-import { CookieService } from "ngx-cookie-service";
+//import { CookieService } from "ngx-cookie-service";
 import { map } from "rxjs/operators";
 import { Observable, Subject } from "rxjs";
 
@@ -14,7 +14,7 @@ export class UserService {
   private currentUser: users;
   private currentUserSubject: Subject<users> = new Subject;
 
-  constructor(private http: HttpClient, private cookieService: CookieService) {}
+  constructor(private http: HttpClient) {}
 
   signUp(user: users) {
     return this.register(user);
@@ -26,7 +26,7 @@ export class UserService {
         console.log(user + " From line 26 in the front end user service");
         this.currentUser = user;
         this.currentUserSubject.next(user);
-        this.cookieService.set("token", user.token);
+        //this.cookieService.set("token", user.token);
         return user;
       })
     );
@@ -40,7 +40,7 @@ export class UserService {
           console.log(user);
           this.currentUser = user;
           this.currentUserSubject.next(user);
-          this.cookieService.set("token", user.token);
+          //this.cookieService.set("token", user.token);
           return user;
         }))
   };

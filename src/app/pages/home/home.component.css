@@ -1,18 +1,59 @@
-button {
-  color: yellowgreen;
-  font-family: "Century Gothic";
+ #mainPage{
+   flex-direction: column;
+   background-color: rebeccapurple;
 }
 
 p {
-  color: pink;
+  color: ghostwhite;
+  align-content: center;
+}
+
+ div {
+   background-color: rebeccapurple;
+   width: 600px;
+   border: 15px solid black;
+   padding: 5px;
+   margin: 5px;
+ }
+
+ div {
+   color: white;
+   font-family: verdana;
+   font-size: 20px;
+   text-align: center;
+ }
+
+  .button {
+   background-color: #F8F8FF;
+   border: none;
+   color: black;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-family: verdana;
+   font-size: 20px;
+   margin: 4px 2px;
+   cursor: pointer;
+ }
+
+ .headerText {
+  display: flex;
+   color: ghostwhite;
+   font-family: verdana;
+   font-size: 20px;
+  justify-content: center;
+  align-content: center;
 }
 
 #frontPageImage {
-  display: flex;
+  display: block;
   justify-content: center;
 }
 
 img {
+  margin-left: auto;
+  margin-right: auto;
   height: 200px;
   width: 350px;
 }
