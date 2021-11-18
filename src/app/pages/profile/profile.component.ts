@@ -1,10 +1,8 @@
+// @ts-ignore
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../models/user';
-import { FormControl, NgForm, FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
-import { HttpErrorResponse } from '@angular/common/http';
-import { NotificationService } from 'src/app/services/notification.service';
-import {UserService} from "../../services/user.service";
+import { UserService } from 'src/app/services/user.service';
+import { users } from '../../models/users';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -14,21 +12,20 @@ export class ProfileComponent implements OnInit {
 
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private userService: UserService
-  ) {
-  }
+   private userService: UserService,
+  ) {}
 
-  user: User;
+  user:users;
 
   ngOnInit() {
-    this.route.params.subscribe((param) => {
-      console.log(param);
-      this.userService.getCurrentUser().subscribe((u) => {
-        this.user = u;
-      });
-      this.userService.refreshUser();
-    });
+    this.displayProfile();
+
+    }
+
+    displayProfile() {
+      console.log("DisplayProfile was called!");
+      this.userService.getCurrentUser().subscribe(user => {
+        this.user = user;
+    })
   }
 }
