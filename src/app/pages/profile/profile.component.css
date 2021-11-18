@@ -1,0 +1,37 @@
+* {
+  background-color: #E8F2EA;
+}
+.profileHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+  width: 100%;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardImg {
+  width: 152px;
+  height: 211px;
+}
+
+.card {
+  text-align: center;
+  text-wrap: normal;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid lightgrey;
+}
+
+.numOwned {
+  margin: 0px;
+  padding: 0px;
+  flex-direction: row;
+}

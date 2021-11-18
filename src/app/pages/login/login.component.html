@@ -1,45 +1,47 @@
+<div id="wrapper">
 <p>login works!</p>
-
+<!-- start form for login page-->
 <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+
+  <!--Create the username field-->
   <div class="form-group">
-    <strong><label ngFor="Username">Username: </label></strong>
+    <strong><label ngFor="username">Username: </label></strong>
     <input
       required
-      Username="true"
+      username="true"
       ngModel
-      name="Username"
-      #Username="ngModel"
+      name="username"
+      #username="ngModel"
       type="text"
-      id="Username">
-    <div class="alert alert-danger" *ngIf="Username.touched && !Username.valid">
-      <div *ngIf="Username.errors.required">Email is required</div>
-      <div *ngIf="Username.errors.pattern">Valid email is required</div>
-      <div *ngIf="Username.errors?.email">Valid email is required</div>
+      id="username">
+    <div class="alert alert-danger" *ngIf="username.touched && !username.valid">
+      <div *ngIf="username.errors.required">Email is required</div>
+      <div *ngIf="username.errors.pattern">Valid email is required</div>
+      <div *ngIf="username.errors?.email">Valid email is required</div>
     </div>
   </div>
 
+  <!--Create password field-->
   <div class="form-group">
-    <strong><label ngFor="Password">Password: </label></strong>
+    <strong><label ngFor="password">Password: </label></strong>
     <input
       required
       minlength="6"
       max-length="20"
       pattern="^\S*$"
       ngModel
-      name="Password"
-      #Password="ngModel"
+      name="password"
+      #password="ngModel"
       type="password"
-      id="Password"
+      id="password"
       class="form-control">
-    <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
-      <div *ngIf="Password.errors.required">Password is required</div>
-      <div *ngIf="Password.errors.minlength">Reminder your password is 6 - 20 characters</div>
-      <div *ngIf="Password.errors.maxlength">Reminder your password is 6 - 20 characters</div>
-      <div *ngIf="Password.errors.pattern">Your password should not contain spaces</div>
+    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+      <div *ngIf="password.errors.required">Password is required</div>
+      <div *ngIf="password.errors.minlength">Reminder your password is 6 - 20 characters</div>
+      <div *ngIf="password.errors.maxlength">Reminder your password is 6 - 20 characters</div>
+      <div *ngIf="password.errors.pattern">Your password should not contain spaces</div>
     </div>
   </div>
-
   <button>Login</button>
 </form>
-
-
+</div>

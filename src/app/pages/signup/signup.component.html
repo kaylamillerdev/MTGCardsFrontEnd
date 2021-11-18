@@ -1,12 +1,11 @@
-<div class="split left"> 
+<div class="split left">
   <div class="centered">
     <header>
     <h1>Create Account</h1>
     </header>
 <form
-  #createAccountForm="ngForm"
-  (ngSubmit)="signUp(createAccountForm)"
-  >
+  #registerForm="ngForm"
+  (ngSubmit)="register(registerForm)">
   <!-- Username with validators -->
       <div class="form-group">
     <input
@@ -15,25 +14,25 @@
       maxlength="20"
       pattern="[a-zA-z]*"
       ngModel
-      name="Username"
-      #Username="ngModel"
-      id="Username"
+      name="username"
+      #username="ngModel"
+      id="username"
       type="text"
       class="form-control"
       placeholder="Username"
     />
     <div
       class="alert alert-danger"
-      *ngIf="Username.touched && !Username.valid"
+      *ngIf="username.touched && !username.valid"
     >
-      <div *ngIf="Username.errors.required">Username is required</div>
-      <div *ngIf="Username.errors.minlength">
+      <div *ngIf="username.errors.required">Username is required</div>
+      <div *ngIf="username.errors.minlength">
         Username should be between 6 - 20 characters and must end with a number
       </div>
-      <div *ngIf="Username.errors.maxlength">
+      <div *ngIf="username.errors.maxlength">
         Username should be between 6 - 20 characters and must end with a number
       </div>
-      <div *ngIf="Username.errors.pattern">
+      <div *ngIf="username.errors.pattern">
         Username must not contain spaces or special characters. Letters and numbers only.
       </div>
     </div>
@@ -47,25 +46,25 @@
       maxlength="20"
       pattern="[a-zA-Z]*"
       ngModel
-      name="FirstName"
-      #FirstName="ngModel"
-      id="FirstName"
+      name="firstName"
+      #firstName="ngModel"
+      id="firstName"
       type="text"
       class="form-control"
       placeholder="First Name"
     />
     <div
       class="alert alert-danger"
-      *ngIf="FirstName.touched && !FirstName.valid"
+      *ngIf="firstName.touched && !firstName.valid"
     >
-      <div *ngIf="FirstName.errors.required">First Name is required</div>
-      <div *ngIf="FirstName.errors.minlength">
+      <div *ngIf="firstName.errors.required">First Name is required</div>
+      <div *ngIf="firstName.errors.minlength">
         First Name should be between 2 - 20 characters
       </div>
-      <div *ngIf="FirstName.errors.maxlength">
+      <div *ngIf="firstName.errors.maxlength">
         First Name should be between 2 - 20 characters
       </div>
-      <div *ngIf="FirstName.errors.pattern">
+      <div *ngIf="firstName.errors.pattern">
         First Name must not contain spaces, numbers or special characters
       </div>
     </div>
@@ -79,25 +78,25 @@
       maxlength="20"
       pattern="[a-zA-Z]*"
       ngModel
-      name="LastName"
-      #LastName="ngModel"
-      id="LastName"
+      name="lastName"
+      #lastName="ngModel"
+      id="lastName"
       type="text"
       class="form-control"
       placeholder="Last Name"
     />
     <div
       class="alert alert-danger"
-      *ngIf="LastName.touched && !LastName.valid"
+      *ngIf="lastName.touched && !lastName.valid"
     >
-      <div *ngIf="LastName.errors.required">Last Name is required</div>
-      <div *ngIf="LastName.errors.minlength">
+      <div *ngIf="lastName.errors.required">Last Name is required</div>
+      <div *ngIf="lastName.errors.minlength">
         Last Name should be between 2 - 20 characters
       </div>
-      <div *ngIf="LastName.errors.maxlength">
+      <div *ngIf="lastName.errors.maxlength">
         Last Name should be between 2 - 20 characters
       </div>
-      <div *ngIf="LastName.errors.pattern">
+      <div *ngIf="lastName.errors.pattern">
         Last Name must not contain spaces, numbers or special characters
       </div>
     </div>
@@ -107,19 +106,19 @@
   <div class="form-group">
     <input
       required
-      Email="true"
+      email="true"
       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
       ngModel
-      name="Email"
-      #Email="ngModel"
+      name="email"
+      #email="ngModel"
       type="email"
-      id="Email"
+      id="email"
       class="form-control"
-      placeholder="Email"
+      placeholder="email"
     />
-    <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
-      <div *ngIf="Email.errors.required">Email is required</div>
-      <div *ngIf="Email.errors.pattern">Valid email is required</div>
+    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+      <div *ngIf="email.errors.required">Email is required</div>
+      <div *ngIf="email.errors.pattern">Valid email is required</div>
     </div>
   </div>
 
@@ -132,25 +131,25 @@
       maxlength="20"
       pattern="^\S*$"
       ngModel
-      name="Password"
-      #Password="ngModel"
+      name="password"
+      #password="ngModel"
       type="password"
-      id="Password"
+      id="password"
       class="form-control"
-      placeholder="Password"
+      placeholder="password"
     />
     <div
       class="alert alert-danger"
-      *ngIf="Password.touched && !Password.valid"
+      *ngIf="password.touched && !password.valid"
     >
-      <div *ngIf="Password.errors.required">Password is required</div>
-      <div *ngIf="Password.errors.minlength">
+      <div *ngIf="password.errors.required">Password is required</div>
+      <div *ngIf="password.errors.minlength">
         Password must be between 6 - 20 characters
       </div>
-      <div *ngIf="Password.errors.maxlength">
+      <div *ngIf="password.errors.maxlength">
         Password must be between 6 - 20 characters
       </div>
-      <div *ngIf="Password.errors.pattern">
+      <div *ngIf="password.errors.pattern">
         Password must not contain any spaces
       </div>
     </div>
@@ -161,33 +160,33 @@
     <input
       required
       ngModel
-      name="PasswordConfirm"
-      #PasswordConfirm="ngModel"
+      name="passwordConfirm"
+      #passwordConfirm="ngModel"
       type="password"
-      id="PasswordConfirm"
+      id="passwordConfirm"
       class="form-control"
       placeholder="Confirm Password"
     />
     <div
       class="alert alert-danger"
-      *ngIf="PasswordConfirm.touched && !PasswordConfirm.valid"
+      *ngIf="passwordConfirm.touched && !passwordConfirm.valid"
     >
-      <div *ngIf="PasswordConfirm.errors.required">
+      <div *ngIf="passwordConfirm.errors.required">
         Password confirm is required
       </div>
-      <div *ngIf="!this.passwordsMatch">Passwords do not match</div>
+      <div *ngIf="!this.password && this.passwordConfirm">Passwords do not match</div>
     </div>
   </div>
   <br />
 
-  <button class="btn btn-primary">Sign Up</button>
-  <p>Already have an account? <a href="https://relaxed-lalande-20b424.netlify.app/login">Sign In</a></p> 
+  <button class="btn">Sign Up</button>
+  <p>Already have an account? <a routerLink="/login" >Sign In</a></p>
 </form>
 </div>
-</div> 
+</div>
 
 
-<div class="split right"> 
+<div class="split right">
   <div class="centered">
   </div>
 </div>

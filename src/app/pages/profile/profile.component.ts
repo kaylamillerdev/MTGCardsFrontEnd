@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
-import { users } from '../../models/users';
-
+import { User } from '../../models/user';
+import { FormControl, NgForm, FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+import { NotificationService } from 'src/app/services/notification.service';
+import {UserService} from "../../services/user.service";
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -11,20 +14,21 @@ export class ProfileComponent implements OnInit {
 
 
   constructor(
-   private userService: UserService,
-  ) {}
+    private router: Router,
+    private route: ActivatedRoute,
+    private userService: UserService
+  ) {
+  }
 
-  user:users;
+  user: User;
 
   ngOnInit() {
-    this.displayProfile();
-    
-    }
-
-    displayProfile() {
-      console.log("DisplayProfile was called!");
-      this.userService.getCurrentUser().subscribe(user => {
-        this.user = user;
-    })
+    this.route.params.subscribe((param) => {
+      console.log(param);
+      this.userService.getCurrentUser().subscribe((u) => {
+        this.user = u;
+      });
+      this.userService.refreshUser();
+    });
   }
 }

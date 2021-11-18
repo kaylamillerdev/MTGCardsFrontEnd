@@ -1,30 +1,31 @@
-body {
+* {
     background-color:#000000;
-    color:black
+    color:white;
 
 }
 
-div#wrapper {
-    margin:0 auto; width:95%; margin:0 auto; width:960px; background-color:#B5CDA3; padding:0 2%; opacity:1.25;
+#wrapper {
+    margin:0 auto; 
+    width:95%; 
+    margin:0 auto; 
+    width:960px; 
+    background-color:#B5CDA3; 
+    padding:0 2%; 
+    opacity:1.25;
 }
 
-nav {
-    width:100%;
-
-}
-
-div#filler {
+div #filler {
     width:5%;
     float:left;
 }
 
-main{
+main {
     width:95%;
     float:right;
 
 }
 
-footer{
+footer {
     width:100%;
     clear:both;
 
@@ -38,10 +39,26 @@ footer{
 
 }
 
-#bottom {width: 150px;}
+#bottom {
+    width: 150px;
+}
 
-b{color: black; font-family:verdana; font-size:2.15em; text-decoration:none; text-align:center;}
+b {
+    color: black; 
+    font-family:verdana; 
+    font-size:2.15em; 
+    text-decoration:none; 
+    text-align:center;
+}
 
-p {font-size:1.15em; font-family:roman; color: #000000;}
+p {
+    font-size:1.15em; 
+    font-family: Times, "Times New Roman"; 
+    color: #000000;
+}
 
-#main {width: 75%; float:left; font-style:italic;}
+#main {
+    width: 75%; 
+    float:left; 
+    font-style:italic;
+}

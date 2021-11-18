@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { users } from "src/app/models/users";
-import { cardsOwned } from "src/app/models/cardsOwned";
+import { User } from 'src/app/models/user';
 import { NgForm } from "@angular/forms";
-import {UserService } from "src/app/services/user.service";
+import { UserService } from "src/app/services/user.service";
+import { HttpErrorResponse} from "@angular/common/http";
+import { AuthenticationService} from "../../services/authentication.service";
 import {Router} from "@angular/router";
 import { NotificationService } from "src/app/services/notification.service";
-import { HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-signup',
@@ -13,58 +13,40 @@ import { HttpErrorResponse} from "@angular/common/http";
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-  Password = '';
-  user: users;
+  email = '';
+  password = '';
+  user: User;
   passwordsMatch: boolean = true;
-
-  signUp(signUpForm: NgForm) {
-    console.log(signUpForm);
-    console.log(signUpForm.value);
-
-    this.passwordsMatch = signUpForm.value.PasswordConfirm == signUpForm.value.Password;
-    console.log(signUpForm.value);
-    if(this.passwordsMatch){
-      if (signUpForm.status == "VALID") {
-        console.log("after valid check: " + signUpForm.value)
-        this.userService.signUp(signUpForm.value).subscribe(
-          (user: users) => {
-            this.user = user;
-            this.router.navigateByUrl("/login");
-            console.log("successfully signed up!");
-            this.notifyService.newNotification({
-              body: "You have successfully Signed Up!",
-            });
-          },
-        (error: HttpErrorResponse) => {
-          console.log("Problem signing up.");
-          console.log(error);
-          this.notifyService.newNotification({
-            body: "An account with this email already exists",
-          });
-        }
-        );
-      } else {
-        console.log("form is invalid");
-        this.notifyService.newNotification({
-          body: "Form is invalid. Complete all fields as required.",
-        });
-      }
-    } else {
-      console.log("passwords dont match");
-      this.notifyService.newNotification({
-        body: "Passwords do not match",
-      });
-    }
-  }
 
   constructor(
     private userService: UserService,
-    private notifyService: NotificationService,
+    private AuthService: AuthenticationService,
+    private NotifyService: NotificationService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
+  register(registerForm: NgForm){
+    console.log(registerForm);
+    console.log(registerForm.value);
+
+    this.passwordsMatch = registerForm.value.passwordConfirm == registerForm.value.password;
+    if(this.passwordsMatch){
+      if(registerForm.status == "VALID"){
+        this.userService.createAccount(registerForm.value).subscribe(
+          (user: User) => {
+            this.user = user;
+            this.router.navigateByUrl("/");
+            console.log("Successfully created an account");
+          }
+        );
+      } else {
+        console.log("This form is invalid");
+      }
+    } else {
+      console.log("passwords don't match");
+    }
+  }
 }

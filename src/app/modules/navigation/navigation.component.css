@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #39A2DB;
+}
+
+button {
+  border: none;
+  background-color: mediumpurple;
+  border-radius: 5px;
+  font-size: large;
+}
+
+.userAuthContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  width: 90%;
+}
+
+button {
+  margin: 6px;
+}

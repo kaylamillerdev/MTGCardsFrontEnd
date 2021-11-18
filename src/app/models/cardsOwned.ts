@@ -10,4 +10,5 @@ export class cardsOwned {
     printing: string;
     description: string;
     numOwned: number;
+    image: string;
 }

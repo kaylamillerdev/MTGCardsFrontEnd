@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
-import { users } from "src/app/models/users";
-import { UserService} from "../../services/user.service";
+import { NgForm, FormControl, FormBuilder, Validators, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
-import { HttpErrorResponse} from "@angular/common/http";
 import { NotificationService} from "../../services/notification.service";
+import { User } from "../../models/user";
+import { UserService } from "../../services/user.service";
+import { HttpErrorResponse } from "@angular/common/http";
 
 @Component({
   selector: 'app-login',
@@ -14,37 +14,28 @@ import { NotificationService} from "../../services/notification.service";
 export class LoginComponent implements OnInit {
 
   constructor(
-    private userService: UserService,
     private notifyService: NotificationService,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
   }
-  Username = "";
-  Password = "";
-  user: users;
+  username = "";
+  password = "";
+  user: User;
 
   login(loginForm: NgForm) {
-    console.log("Found the login form");
-    if (loginForm.status == "VALID") {
-      console.log(loginForm.value);
+    console.log(loginForm);
+    console.log(loginForm.value);
+    if(loginForm.status == "VALID") {
       this.userService.login(loginForm.value).subscribe(
-        (user: users) => {
+        (user: User) => {
           this.user = user;
-          console.log("You have logged in");
-          this.router.navigateByUrl("/profile");
-          this.notifyService.newNotification({
-            body: "You have logged in!",
-          })
-        })
+          console.log("You have logged in!");
+          this.router.navigateByUrl("/profile/" + this.user.username)
+        }
+      )
     }
-    (error: HttpErrorResponse) => {
-      console.log("problem logging in");
-      console.log(error);
-      this.notifyService.newNotification({
-        body: "incorrect username or password",
-      });
-    }
-  };
+  }
 }

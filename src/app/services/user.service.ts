@@ -1,29 +1,40 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { users } from "../models/users";
-import { Config } from "../Config/config";
-import { CookieService } from "ngx-cookie-service";
-import { map } from "rxjs/operators";
-import { Observable, Subject } from "rxjs";
+import { User } from '../models/user';
+import { Config} from "../Config/config";
+import { CookieService} from "ngx-cookie-service";
+import { map } from 'rxjs/operators';
+import { Observable, of, Subject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserService {
-  apiUrl: string = Config.apiUrl;
-  private currentUser: users;
-  private currentUserSubject: Subject<users> = new Subject;
+
+  url: string = Config.apiUrl;
+  private currentUser: User;
+  private currentUserSubject: Subject<User> = new Subject();
 
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
-  signUp(user: users) {
+  createAccount(user: User){
     return this.register(user);
   }
 
-  register(user: users){
-    return this.http.post<users>(`${this.apiUrl}/users/signup`, user).pipe(
-      map((user) => {
-        console.log(user + " From line 26 in the front end user service");
+  register(user: User){
+    return this.http.post<User>(`${this.url}/users/signup`, user).pipe(
+      map((user: User) => {
+        console.log(user);
+        this.currentUserSubject.next(user);
+        this.currentUser = user;
+        this.cookieService.set("token", user.token);
+        return user;
+      })
+    );
+  }
+
+  login(user: User){
+    return this.http.post<User>(`${this.url}/users/login`, user).pipe(
+      map((user: User) => {
+        console.log(user);
         this.currentUser = user;
         this.currentUserSubject.next(user);
         this.cookieService.set("token", user.token);
@@ -31,19 +42,6 @@ export class UserService {
       })
     );
   }
-
-  login(user: users) {
-    return this.http
-      .post(`${this.apiUrl}/users/login`, user)
-      .pipe(
-        map((users) => {
-          console.log(user);
-          this.currentUser = user;
-          this.currentUserSubject.next(user);
-          this.cookieService.set("token", user.token);
-          return user;
-        }))
-  };
 
   isLoggedIn(): boolean {
     return this.currentUserSubject != null;
@@ -53,14 +51,17 @@ export class UserService {
     this.currentUserSubject.next(null);
   }
 
-  getCurrentUser(): Observable<users> {
-    return this.currentUserSubject;
+  getUserFromLocal() {
+    //TODO: eat the cookie
   }
 
+  getCurrentUser(): Observable<User> {
+    return this.currentUserSubject; //is of() is the same as new Observable()
+  }
+
+  //sometimes subscribe is being called after next so just refresh after looking at it
   refreshUser(): void {
     console.log(this.currentUser);
     this.currentUserSubject.next(this.currentUser);
   }
-
-
 }

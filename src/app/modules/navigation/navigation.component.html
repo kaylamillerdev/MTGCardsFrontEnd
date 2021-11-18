@@ -1,5 +1,14 @@
 <nav>
   <button [routerLink]="['home']"> Home </button>
-  <button [routerLink]="['login']"> Login</button>
-  <button [routerLink]="['signup']"> Signup</button>
+  <div class="userAuthContainer" *ngIf="user == null">
+    <button class="userAuth" [routerLink]="['signup']"> Signup</button>
+    <button class="userAuth" [routerLink]="['login']"> Login</button>
+  </div>
+  <div *ngIf="user != null">
+    <h3>Hello, {{user.firstName}}</h3>
+    <button (click)="logout()" class="dropdown-item">Log Out</button>
+  </div>
 </nav>
+
+
+
