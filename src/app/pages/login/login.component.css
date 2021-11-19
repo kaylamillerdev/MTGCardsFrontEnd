@@ -1,35 +1,3 @@
-<<<<<<< HEAD
-* {
-    background-color:#000000;
-    color:white;
-
-}
-
-#wrapper {
-    margin:0 auto; 
-    width:95%; 
-    margin:0 auto; 
-    width:960px; 
-    background-color:#B5CDA3; 
-    padding:0 2%; 
-    opacity:1.25;
-}
-
-div #filler {
-    width:5%;
-    float:left;
-}
-
-main {
-    width:95%;
-    float:right;
-
-}
-
-footer {
-    width:100%;
-    clear:both;
-=======
 h1 { 
     color: #6D8299; 
     font-family: Nunito, sans-serif;
@@ -96,7 +64,6 @@ input::placeholder {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: 110%;
->>>>>>> e260572e74bf33282b5e715cfe2197b683dc6ac1
 
   }
   
@@ -126,30 +93,6 @@ p {
     font-family: Nunito, sans-serif;
 }
 
-<<<<<<< HEAD
-#bottom {
-    width: 150px;
-}
-
-b {
-    color: black; 
-    font-family:verdana; 
-    font-size:2.15em; 
-    text-decoration:none; 
-    text-align:center;
-}
-
-p {
-    font-size:1.15em; 
-    font-family: Times, "Times New Roman"; 
-    color: #000000;
-}
-
-#main {
-    width: 75%; 
-    float:left; 
-    font-style:italic;
-=======
 /*sets the color of the link to the sign in page*/
 a:link { 
   color: #6D8299;
@@ -157,5 +100,4 @@ a:link {
 /*sets the color of the link to the sign in page when visited */
 a:visited {
   color: #6D8299;
->>>>>>> e260572e74bf33282b5e715cfe2197b683dc6ac1
 }
