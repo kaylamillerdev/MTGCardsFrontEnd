@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     background-color:#000000;
     color:white;
@@ -28,17 +29,104 @@ main {
 footer {
     width:100%;
     clear:both;
-
+=======
+h1 { 
+    color: #6D8299; 
+    font-family: Nunito, sans-serif;
+    text-align: center;
+}
+body { 
+    font-family: Nunito, sans-serif;
+    color: #E8F8F2;
+    text-align: left;    
 }
 
-.navigation li {
-    display:inline;
-    color:wheat;
-    list-style-type:none;
-    padding:9px;
+form { 
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: auto; 
+    height: 100%; 
+} 
 
+/*creates padding at the bottom of each element*/
+.form-group { 
+  padding-bottom: 5%;
+  width: 100%;
 }
 
+/*rounds the edges of the input fields */ 
+input { 
+    border: 2px;
+    border-radius: 5px;
+    height: 25px;
+    width: 350px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: lightgray;
+}
+
+input::placeholder { 
+    font-size: medium;
+    font-family: Nunito, sans-serif;
+}
+
+/*split the screen */ 
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color:#F2E8F0;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color: #F2E8F0;
+    background-image: url(https://wallpaperaccess.com/full/1544490.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 110%;
+>>>>>>> e260572e74bf33282b5e715cfe2197b683dc6ac1
+
+  }
+  
+  /* center content vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+  }
+  /*Login button*/
+.btn { 
+    border: 2px;
+    border-radius: 25px;
+    height: 45px;
+    width: 350px;
+    color: white; 
+    background-color: #6D8299;
+    font-family: Nunito, sans-serif;
+    font-size: large;
+}
+
+p { 
+    text-align: center;
+    font-size: medium;
+    font-family: Nunito, sans-serif;
+}
+
+<<<<<<< HEAD
 #bottom {
     width: 150px;
 }
@@ -61,4 +149,13 @@ p {
     width: 75%; 
     float:left; 
     font-style:italic;
+=======
+/*sets the color of the link to the sign in page*/
+a:link { 
+  color: #6D8299;
+}
+/*sets the color of the link to the sign in page when visited */
+a:visited {
+  color: #6D8299;
+>>>>>>> e260572e74bf33282b5e715cfe2197b683dc6ac1
 }
