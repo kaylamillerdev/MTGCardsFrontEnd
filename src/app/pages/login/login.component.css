@@ -1,47 +1,103 @@
-body {
-    background-color:#000000;
-    color:black
-
+h1 { 
+    color: #6D8299; 
+    font-family: Nunito, sans-serif;
+    text-align: center;
+}
+body { 
+    font-family: Nunito, sans-serif;
+    color: #E8F8F2;
+    text-align: left;    
 }
 
-div#wrapper {
-    margin:0 auto; width:95%; margin:0 auto; width:960px; background-color:#B5CDA3; padding:0 2%; opacity:1.25;
+form { 
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: auto; 
+    height: 100%; 
+} 
+
+/*creates padding at the bottom of each element*/
+.form-group { 
+  padding-bottom: 5%;
+  width: 100%;
 }
 
-nav {
-    width:100%;
-
+/*rounds the edges of the input fields */ 
+input { 
+    border: 2px;
+    border-radius: 5px;
+    height: 25px;
+    width: 350px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: lightgray;
 }
 
-div#filler {
-    width:5%;
-    float:left;
+input::placeholder { 
+    font-size: medium;
+    font-family: Nunito, sans-serif;
 }
 
-main{
-    width:95%;
-    float:right;
+/*split the screen */ 
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color:#F2E8F0;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color: #F2E8F0;
+    background-image: url(https://wallpaperaccess.com/full/1544490.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 110%;
 
+  }
+  
+  /* center content vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+  }
+  /*Login button*/
+.btn { 
+    border: 2px;
+    border-radius: 25px;
+    height: 45px;
+    width: 350px;
+    color: white; 
+    background-color: #6D8299;
+    font-family: Nunito, sans-serif;
+    font-size: large;
 }
 
-footer{
-    width:100%;
-    clear:both;
-
+p { 
+    text-align: center;
+    font-size: medium;
+    font-family: Nunito, sans-serif;
 }
 
-.navigation li {
-    display:inline;
-    color:wheat;
-    list-style-type:none;
-    padding:9px;
-
+/*sets the color of the link to the sign in page*/
+a:link { 
+  color: #6D8299;
 }
-
-#bottom {width: 150px;}
-
-b{color: black; font-family:verdana; font-size:2.15em; text-decoration:none; text-align:center;}
-
-p {font-size:1.15em; font-family:roman; color: #000000;}
-
-#main {width: 75%; float:left; font-style:italic;}
+/*sets the color of the link to the sign in page when visited */
+a:visited {
+  color: #6D8299;
+}

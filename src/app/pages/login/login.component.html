@@ -1,4 +1,8 @@
-<p>login works!</p>
+<div class="split left"> 
+  <div class="centered">
+    <header>
+    <h1>Welcome to the Login Page!</h1>
+    </header>
 
 <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
   <div class="form-group">
@@ -38,8 +42,7 @@
       <div *ngIf="Password.errors.pattern">Your password should not contain spaces</div>
     </div>
   </div>
-
-  <button>Login</button>
+  
+  <button class="btn btn-primary">login</button>
 </form>
-
 
