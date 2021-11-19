@@ -1,45 +1,23 @@
- #mainPage{
-   flex-direction: column;
-   background-color: rebeccapurple;
-   align-items: center;
-   justify-content: center;
-   background-color: rebeccapurple;
-   /*width: 600px;*/
-   border: 15px solid black;
-   padding: 5px;
-   margin: auto;
-   color: white;
-   font-family: verdana;
-   font-size: 20px;
-   text-align: center;
+#mainPage{
+  display: flex;
+  flex-direction: column;
+  background-color: rebeccapurple;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  margin: 0px;
+  padding: 0px;
+  height: 95vh;
 }
+
 
 p {
   color: ghostwhite;
-  align-content: center;
-}
-
-
- .headerText {
-  display: flex;
-   color: ghostwhite;
-   font-family: verdana;
-   font-size: 20px;
-  justify-content: center;
-  align-content: center;
-}
-
-#frontPageImage {
-  display: block;
-  justify-content: center;
+  justify-self: center;
+  align-self: center;
 }
 
 img {
-  margin-left: auto;
-  margin-right: auto;
-  /*height: 200px;*/
-  /*width: 350px;*/
+  justify-self: center;
+  align-self: center;
 }
-
-
-
