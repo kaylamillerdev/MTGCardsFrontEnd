@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { users } from "../models/users";
+import { User } from "../models/user";
 import { Config } from "../Config/config";
 //import { CookieService } from "ngx-cookie-service";
 import { map } from "rxjs/operators";
@@ -11,17 +11,17 @@ import { Observable, Subject } from "rxjs";
 })
 export class UserService {
   apiUrl: string = Config.apiUrl;
-  private currentUser: users;
-  private currentUserSubject: Subject<users> = new Subject;
+  private currentUser: User;
+  private currentUserSubject: Subject<User> = new Subject;
 
   constructor(private http: HttpClient) {}
 
-  signUp(user: users) {
+  signUp(user: User) {
     return this.register(user);
   }
 
-  register(user: users){
-    return this.http.post<users>(`${this.apiUrl}/users/signup`, user).pipe(
+  register(user: User){
+    return this.http.post<User>(`${this.apiUrl}/users/signup`, user).pipe(
       map((user) => {
         console.log(user + " From line 26 in the front end user service");
         this.currentUser = user;
@@ -32,7 +32,7 @@ export class UserService {
     );
   }
 
-  login(user: users) {
+  login(user: User) {
     return this.http
       .post(`${this.apiUrl}/users/login`, user)
       .pipe(
@@ -53,7 +53,7 @@ export class UserService {
     this.currentUserSubject.next(null);
   }
 
-  getCurrentUser(): Observable<users> {
+  getCurrentUser(): Observable<User> {
     return this.currentUserSubject;
   }
 

@@ -1,6 +1,17 @@
  #mainPage{
    flex-direction: column;
    background-color: rebeccapurple;
+   align-items: center;
+   justify-content: center;
+   background-color: rebeccapurple;
+   /*width: 600px;*/
+   border: 15px solid black;
+   padding: 5px;
+   margin: auto;
+   color: white;
+   font-family: verdana;
+   font-size: 20px;
+   text-align: center;
 }
 
 p {
@@ -8,34 +19,6 @@ p {
   align-content: center;
 }
 
- div {
-   background-color: rebeccapurple;
-   width: 600px;
-   border: 15px solid black;
-   padding: 5px;
-   margin: 5px;
- }
-
- div {
-   color: white;
-   font-family: verdana;
-   font-size: 20px;
-   text-align: center;
- }
-
-  .button {
-   background-color: #F8F8FF;
-   border: none;
-   color: black;
-   padding: 15px 32px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-family: verdana;
-   font-size: 20px;
-   margin: 4px 2px;
-   cursor: pointer;
- }
 
  .headerText {
   display: flex;
@@ -54,7 +37,9 @@ p {
 img {
   margin-left: auto;
   margin-right: auto;
-  height: 200px;
-  width: 350px;
+  /*height: 200px;*/
+  /*width: 350px;*/
 }
+
+
 

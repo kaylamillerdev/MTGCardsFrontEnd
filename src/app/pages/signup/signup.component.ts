@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
     this.passwordsMatch = registerForm.value.passwordConfirm == registerForm.value.password;
     if(this.passwordsMatch){
       if(registerForm.status == "VALID"){
-        this.userService.createAccount(registerForm.value).subscribe(
+        this.userService.signUp(registerForm.value).subscribe(
           (user: User) => {
             this.user = user;
             this.router.navigateByUrl("/");

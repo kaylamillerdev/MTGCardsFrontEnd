@@ -1,7 +1,6 @@
-// @ts-ignore
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
-import { users } from '../../models/users';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +14,7 @@ export class ProfileComponent implements OnInit {
    private userService: UserService,
   ) {}
 
-  user:users;
+  user:User;
 
   ngOnInit() {
     this.displayProfile();
