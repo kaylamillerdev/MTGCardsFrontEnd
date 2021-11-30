@@ -1,54 +1,54 @@
-<div class="split left"> 
+<div class="split left">
   <div class="centered">
     <header>
     <h1>Login</h1>
     </header>
-
-  <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
 
     <!--Create the username field-->
-    <div class="form-group">
-      <input
-        required
-        username="true"
-        ngModel
-        name="username"
-        #username="ngModel"
-        type="text"
-        id="username"
-        placeholder="Username">
-      <div class="alert alert-danger" *ngIf="username.touched && !username.valid">
-        <div *ngIf="username.errors.required">Email is required</div>
-        <div *ngIf="username.errors.pattern">Valid email is required</div>
-        <div *ngIf="username.errors?.email">Valid email is required</div>
+      <div class="form-group">
+        <input
+          required
+          username="true"
+          ngModel
+          name="username"
+          #username="ngModel"
+          type="text"
+          id="username"
+          placeholder="Username">
+        <div class="alert alert-danger" *ngIf="username.touched && !username.valid">
+          <div *ngIf="username.errors.required">Email is required</div>
+          <div *ngIf="username.errors.pattern">Valid email is required</div>
+          <div *ngIf="username.errors?.email">Valid email is required</div>
+        </div>
       </div>
-    </div>
 
     <!--Create password field-->
-    <div class="form-group">
-      <input
-        required
-        minlength="6"
-        max-length="20"
-        pattern="^\S*$"
-        ngModel
-        name="password"
-        #password="ngModel"
-        type="password"
-        id="password"
-        placeholder="Password"
-        class="form-control">
-      <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
-        <div *ngIf="password.errors.required">Password is required</div>
-        <div *ngIf="password.errors.minlength">Reminder your password is 6 - 20 characters</div>
-        <div *ngIf="password.errors.maxlength">Reminder your password is 6 - 20 characters</div>
-        <div *ngIf="password.errors.pattern">Your password should not contain spaces</div>
+      <div class="form-group">
+        <input
+          required
+          minlength="6"
+          max-length="20"
+          pattern="^\S*$"
+          ngModel
+          name="password"
+          #password="ngModel"
+          type="password"
+          id="password"
+          placeholder="Password"
+          class="form-control">
+        <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">Reminder your password is 6 - 20 characters</div>
+          <div *ngIf="password.errors.maxlength">Reminder your password is 6 - 20 characters</div>
+          <div *ngIf="password.errors.pattern">Your password should not contain spaces</div>
+        </div>
       </div>
-    </div>
-    
-    <button class="btn btn-primary">login</button>
-    <p>Need an account? <a [routerLink]="['../signup']" >Sign Up</a></p>
-  </form>
+
+      <button class="btn btn-primary">login</button>
+      <p>Need an account? <a [routerLink]="['../signup']" >Sign Up</a></p>
+    </form>
+  </div>
 </div>
 
 <div class="split right">

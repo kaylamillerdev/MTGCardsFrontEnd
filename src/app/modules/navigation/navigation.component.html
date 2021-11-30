@@ -1,14 +1,18 @@
-<nav>
-  <button [routerLink]='["home"]'> Home </button>
-  <div class="userAuthContainer" *ngIf="user == null">
-    <button class="userAuth" [routerLink]="['signup']"> Signup</button>
-    <button class="userAuth" [routerLink]="['login']"> Login</button>
-  </div>
-  <div *ngIf="user != null">
-    <h3>Hello, {{user.firstName}}</h3>
-    <button (click)="logout()">Log Out</button>
-  </div>
-</nav>
+<section>
+  <nav>
+    <button [routerLink]='["home"]'> Home </button>
+    <div class="userAuthContainer" *ngIf="user == null">
+      <button class="userAuth" [routerLink]="['signup']"> Signup</button>
+      <button class="userAuth" [routerLink]="['login']"> Login</button>
+    </div>
+    <div class="loggedIn" *ngIf="user != null">
+      <img src="../../../assets/img_1.png">
+      <h3>Welcome, Plainswalker {{user.firstName}} {{user.lastName}}</h3>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </nav>
+</section>
+
 
 
 

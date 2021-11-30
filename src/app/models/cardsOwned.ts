@@ -1,4 +1,5 @@
 export class cardsOwned {
+    id: number;
     name: string;
     type: string;
     'color(s)': [string];

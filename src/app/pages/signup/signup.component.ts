@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
         this.userService.signUp(registerForm.value).subscribe(
           (user: User) => {
             this.user = user;
-            this.router.navigateByUrl("/");
+            this.router.navigateByUrl("/login");
             console.log("Successfully created an account");
           }
         );

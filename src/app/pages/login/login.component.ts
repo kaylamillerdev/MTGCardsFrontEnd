@@ -30,10 +30,12 @@ export class LoginComponent implements OnInit {
     console.log(loginForm.value);
     if(loginForm.status == "VALID") {
       this.userService.login(loginForm.value).subscribe(
-        (user: User) => {
+        (user) => {
           this.user = user;
+          console.log(this.user)
           console.log("You have logged in!");
-          this.router.navigateByUrl("/profile/" + this.user.username)
+          this.router.navigateByUrl("/profile/" + user.username);
+          return user;
         }
       )
     }

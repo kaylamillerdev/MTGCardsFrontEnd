@@ -3,14 +3,26 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  background-color: #39A2DB;
+  background-image: linear-gradient(to left, #AC491C , #D78E45);
+  height: 50px;
+  border-radius: 15px / 50px;
+  border: 2px solid black;
+  border-shadow: 10px #69534F;
+  font-family: "Goudy Medieval, Times New Roman";
 }
 
 button {
   border: none;
-  background-color: mediumpurple;
-  border-radius: 5px;
+  background-color: #F6D97A;
+  border-radius: 10%;
   font-size: large;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: lightgrey;
+  color: black;
 }
 
 .userAuthContainer {
@@ -21,6 +33,16 @@ button {
   width: 90%;
 }
 
-button {
-  margin: 6px;
+.loggedIn {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  width: 90%;
+}
+
+img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
